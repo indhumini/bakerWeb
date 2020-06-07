@@ -1,0 +1,15 @@
+
+ngb-carousel {
+    min-width: 100px;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+ .item {
+    position: relative;
+    width: 1500px;
+    height: 333px;
+    left: 50%;
+    transform: translateX((-50%));
+  }
