@@ -9,14 +9,14 @@ const UserSchema = new Schema({
   name: String,
   password: String,
   picture: String,
-  isSeller: { type: Boolean, default: false },
+  //isSeller: { type: Boolean, default: false },
   address: {
     addr1: String,
     addr2: String,
     city: String,
-    state: String,
-    country: String,
-    postalCode: String
+    dob: String,
+    socialmedia: String,
+    contactnum: String
   },
   created: { type: Date, default: Date.now },
 });

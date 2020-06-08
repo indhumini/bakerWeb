@@ -13,13 +13,13 @@
         </div>
         <div class="col-md-8 ml-3">
           <p id="name" class="lead">{{ data.user.name }}</p>
-          <a routerLink="/profile/orders" class="btn btn-warning">My Orders</a>
+          <a routerLink="/profile/orders" class="btn btn-secondary">My Orders</a>
           <br>
           <br>
-          <a routerLink="/profile/settings" class="btn btn-warning">Change Account Settings</a>
+          <a routerLink="/profile/settings" class="btn btn-secondary">Change Account Settings</a>
           <br>
           <br>
-          <a routerLink="/profile/address" class="btn btn-warning">Change Shipping Address</a>
+          <a routerLink="/profile/address" class="btn btn-secondary">Change Delivery Address</a>
           <br>
           <br>
           <div *ngIf="data.user.isSeller">
@@ -27,7 +27,7 @@
             <hr>
             <div class="row">
               <div class="col-md-6 mb-3">
-                <a routerLink="/profile/postproduct" class="btn btn-outline-success btn-block">Post Product for Sale</a>
+                <a routerLink="/profile/postproduct" class="btn btn-outline-success btn-block">Post Customize Product</a>
               </div>
               <div class="col-md-6">
                 <a routerLink="/profile/myproducts" class="btn btn-outline-info btn-block">My Products</a>

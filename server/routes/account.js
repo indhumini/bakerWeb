@@ -94,12 +94,12 @@ router.route('/profile')
       if (req.body.email) user.email = req.body.email;
       if (req.body.password) user.password = req.body.password;
 
-      user.isSeller = req.body.isSeller;
+     // user.isSeller = req.body.isSeller;
 
       user.save();
       res.json({
         success: true,
-        message: 'Successfully edited your profile'
+        message: 'Successfully created your profile'
       });
     });
   });
@@ -121,14 +121,14 @@ router.route('/profile')
       if (req.body.addr1) user.address.addr1 = req.body.addr1;
       if (req.body.addr2) user.address.addr2 = req.body.addr2;
       if (req.body.city) user.address.city = req.body.city;
-      if (req.body.state) user.address.state = req.body.state;
-      if (req.body.country) user.address.country = req.body.country;
-      if (req.body.postalCode) user.address.postalCode = req.body.postalCode;
+      if (req.body.dob) user.address.dob = req.body.dob;
+      if (req.body.socialmedia) user.address.socialmedia = req.body.socialmedia;
+      if (req.body.contactnum) user.address.contactnum = req.body.contactnum;
      
       user.save();
       res.json({
         success: true,
-        message: 'Successfully edited your address'
+        message: 'Successful registration'
       });
     });
   });

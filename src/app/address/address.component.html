@@ -1,6 +1,6 @@
 <section id="address">
     <div class="container p-5">
-      <h4 class="display-4">My Shipping Address</h4>
+      <h4 class="display-4">Delivery Address</h4>
       <hr>
       <app-message></app-message>
       <div *ngIf="!currentAddress" class="m-auto">
@@ -10,6 +10,7 @@
       </div>
       <div *ngIf="currentAddress" class="card bg-light">
         <div class="card-body">
+
           <form>
             <div class="form-group">
               <label>Address 1</label>
@@ -28,22 +29,23 @@
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>State</label>
-                  <input type="text" name="state" class="form-control" [(ngModel)]="currentAddress.state">
+                  <label>DOB</label>
+                  <input type="date" name="state" class="form-control" [(ngModel)]="currentAddress.dob">
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>Postal Code</label>
-                  <input type="text" name="city" class="form-control" [(ngModel)]="currentAddress.postalCode">
+                  <label>Contact Number</label>
+                  <input type="tel" name="contactnum" class="form-control" [(ngModel)]="currentAddress.contactnum">
                 </div>
               </div>
             </div>
+            
             <div class="form-group">
-              <label>Country</label>
-              <input type="text" name="country" class="form-control" [(ngModel)]="currentAddress.country">
+              <label>Facebook/Instagram name(optional)</label>
+              <input type="text" name="socialmedia" class="form-control" [(ngModel)]="currentAddress.socialmedia">
             </div>
-            <button type="button" class="btn btn-danger" (click)="updateAddress()" [disabled]="btnDisabled">Change Address</button>
+            <button type="button" class="btn btn-danger" (click)="updateAddress()" [disabled]="btnDisabled">Register</button>
           </form>
         </div>
       </div>

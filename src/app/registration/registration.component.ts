@@ -71,7 +71,7 @@ export class RegistrationComponent implements OnInit {
           this.router.navigate(['profile/address'])
             .then(() => {
               this.data.success(
-                'Registration Successful! Please enter your shipping address below.'
+                'To complete your account registration please fill the below details.'
               )
             }).catch(error => this.data.error(error));
         }

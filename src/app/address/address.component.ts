@@ -26,7 +26,7 @@ export class AddressComponent implements OnInit {
         this.data.message === ''
       ) {
         this.data.warning(
-          'You have not entered your shipping address. Please enter your shipping address.'
+          'You have not completed the registration process. Please enter your details.'
         );
       }
       this.currentAddress = data['address'];
