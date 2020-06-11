@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 var config=require('./config');
+//const http=require("http");
 
 
 const app = express();
@@ -62,13 +63,70 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan('dev'));
 app.use(cors());
 
+/*app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+ res.setHeader(
+ "Access-Control-Allow-Headers",
+     "Origin, X-Requested-With, Content-Type, Authorization,Accept"
+   );
+   res.setHeader(
+   "Access-Control-Allow-Methods",
+ "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+ );
+ next(); 
+ });
+ 
+ app.post("/api/comments",(req,res,next)=>{
+   const comment=new Comment({
+     title:req.body.title,
+     content:req.body.content
+   });
+   comment.save().then(createdComment=>{
+     res.status(201).json({
+       message:"Comment added successfully",
+       commentId:createdComment._id
+   });
+   
+   });
+ });
+ 
+ app.put("/api/comments/:id", (req, res, next) => {
+   const comment = new Comment({
+     _id: req.body.id,
+     title: req.body.title,
+     content: req.body.content
+   });
+   Comment.updateOne({ _id: req.params.id }, comment).then(result => {
+     console.log(result);
+     res.status(200).json({ message: "Update successful!" });
+   });
+ });
+ 
+ app.get("/api/comments",(req,res,next)=>{
+   Comment.find().then(documents=>{
+     return res.status(200).json({
+       message:"comments fetched successfully",
+       comments:documents.map( )
+    
+   });
+  
+   });
+ });
+ //to delete the comments added
+ app.delete("/api/comments/:id", (req, res, next) => {
+   Comment.deleteOne({ _id: req.params.id }).then(result => {
+     console.log(result);
+     res.status(200).json({ message: "Comment deleted!" });
+   });
+ });
+*/
 const userRoutes = require('./routes/account');
 const mainRoutes = require('./routes/main');
-//const sellerRoutes = require('./routes/seller');
+const sellerRoutes = require('./routes/seller');
 
 app.use('/api', mainRoutes);
 app.use('/api/accounts', userRoutes);
-//app.use('/api/seller', sellerRoutes);
+app.use('/api/seller', sellerRoutes);
 
 app.listen(3030, err => {
   console.log('Magic happens on port awesome 3030');

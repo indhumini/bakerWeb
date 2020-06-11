@@ -1,3 +1,4 @@
+<body class="bkimage">
 <section id="profile">
     <div class="container p-5">
       <h4 class="display-4">My Profile</h4>
@@ -9,17 +10,18 @@
       </div>
       <div *ngIf="data.user" class="row mt-5">
         <div class="col-md-3">
-          <img [src]="data.user.picture" alt="userimage" class="rounded-circle image">
+          <img  src="/assets/img/girl1.png" alt="userimage" class="rounded-circle image">
         </div>
+        <!-- [src]="data.user.picture"-->
         <div class="col-md-8 ml-3">
-          <p id="name" class="lead">{{ data.user.name }}</p>
+          <p id="name"  style="font-weight: 600;" class="lead">{{ data.user.name }}</p>
           <a routerLink="/profile/orders" class="btn btn-secondary">My Orders</a>
           <br>
           <br>
           <a routerLink="/profile/settings" class="btn btn-secondary">Change Account Settings</a>
           <br>
           <br>
-          <a routerLink="/profile/address" class="btn btn-secondary">Change Delivery Address</a>
+         <!-- <a routerLink="/profile/address" class="btn btn-secondary">Change Delivery Address</a>-->
           <br>
           <br>
           <div *ngIf="data.user.isSeller">
@@ -38,4 +40,5 @@
       </div>
     </div>
   </section>
+</body>
   

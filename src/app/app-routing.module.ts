@@ -13,6 +13,9 @@ import { SettingsComponent } from './settings/settings.component';
 import { CategoryComponent } from './category/category.component';
 import { ProductComponent } from './product/product.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import{CommentsComponent} from './comments/comments.component';
+import { MainCartComponent } from './main-cart/main-cart.component';
+import { ConsultationComponent } from './consultation/consultation.component';
 
 const routes: Routes = [
   {
@@ -35,6 +38,14 @@ const routes: Routes = [
     component: AboutUsComponent
   },
   {
+    path:'user-cart',
+    component:MainCartComponent
+  },
+  {
+    path:'consultation',
+    component:ConsultationComponent
+  },
+   {
     path: 'register',
     component: RegistrationComponent,
     canActivate : [AuthGuardService]
@@ -43,6 +54,11 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
     canActivate: [AuthGuardService]
+  },
+  {
+    path: 'create-comments',
+    component: CommentsComponent,
+  
   },
   {
     path: 'profile',
