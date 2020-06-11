@@ -4,10 +4,20 @@ ngb-carousel {
     margin-left: auto;
     margin-right: auto;
   }
-  ngb-carousel {
-    min-width: 100px;
-    max-width: 1500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
   
+
+  .picsize{
+    height: 350px;
+    width: 300px;
+  }
+
+  .fontsen{
+    font-family: Apple Chancery;
+    font-style: italic;
+    color: crimson;
+  }
+
+  .textfont{
+    font-size: large;
+    color: rgb(95, 66, 66);
+  }

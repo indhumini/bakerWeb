@@ -1,6 +1,7 @@
-<section id="address">
+<body style="background-image: url(assets/img/image21.jpg);">
+  <section id="address">
     <div class="container p-5">
-      <h4 class="display-4">Delivery Address</h4>
+      <p class="display-4" style="margin-top: -20px;color:whitesmoke;margin-top: -42px;">Delivery Address</p>
       <hr>
       <app-message></app-message>
       <div *ngIf="!currentAddress" class="m-auto">
@@ -9,40 +10,40 @@
         </h1>
       </div>
       <div *ngIf="currentAddress" class="card bg-light">
-        <div class="card-body">
+        <div  style="height: 0px;" >
 
           <form>
             <div class="form-group">
-              <label>Address 1</label>
+              <label style="color:whitesmoke ;font-weight: 400;">Address 1</label>
               <input type="text" name="address1" class="form-control" [(ngModel)]="currentAddress.addr1">
             </div>
             <div class="form-group">
-              <label>Address 2</label>
+              <label style="color:whitesmoke ;font-weight: 400;">Address 2</label>
               <input type="text" name="address2" class="form-control" [(ngModel)]="currentAddress.addr2">
             </div>
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>City</label>
+                  <label style="color:whitesmoke ;font-weight: 400;">City</label>
                   <input type="text" name="city" class="form-control" [(ngModel)]="currentAddress.city">
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>DOB</label>
+                  <label style="color:whitesmoke ;font-weight: 400;">DOB</label>
                   <input type="date" name="state" class="form-control" [(ngModel)]="currentAddress.dob">
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label>Contact Number</label>
+                  <label style="color:whitesmoke ;font-weight: 400;">Contact Number</label>
                   <input type="tel" name="contactnum" class="form-control" [(ngModel)]="currentAddress.contactnum">
                 </div>
               </div>
             </div>
             
             <div class="form-group">
-              <label>Facebook/Instagram name(optional)</label>
+              <label style="color:whitesmoke ;font-weight: 400;">Facebook/Instagram name(optional)</label>
               <input type="text" name="socialmedia" class="form-control" [(ngModel)]="currentAddress.socialmedia">
             </div>
             <button type="button" class="btn btn-danger" (click)="updateAddress()" [disabled]="btnDisabled">Register</button>
@@ -51,4 +52,5 @@
       </div>
     </div>
   </section>
+</body>
   
