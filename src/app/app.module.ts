@@ -47,6 +47,7 @@ import { ProductItemComponent } from './shopping-cart/product-list/product-item/
 import { MainCartComponent } from './main-cart/main-cart.component';
 import { ConsultationComponent } from './consultation/consultation.component';
 import { NgImageSliderModule } from 'ng-image-slider';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 
 
 @NgModule({
@@ -75,7 +76,8 @@ import { NgImageSliderModule } from 'ng-image-slider';
     CartItemComponent,
     ProductItemComponent,
     MainCartComponent,
-    ConsultationComponent
+    ConsultationComponent,
+    AdminProfileComponent
   ],
   imports: [
     BrowserModule,

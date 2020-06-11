@@ -17,10 +17,14 @@
                   <label class="form-control-label" style="color:whitesmoke ;font-weight: 200;font-size: large;">Name</label>
                   <input type="text" name="name" class="form-control" [(ngModel)]="name">
                 </div>
+
+                
                 <div class="form-group">
                   <label class="form-control-label"  style="color:whitesmoke ;font-weight: 200;font-size: large;">Email</label>
                   <input type="text" name="email" class="form-control" [(ngModel)]="email">
                 </div>
+
+
                 <div class="form-group">
                   <label class="form-control-label"  style="color:whitesmoke ;font-weight: 200;font-size: large;">Password</label>
                   <input type="password" name="password" class="form-control" [(ngModel)]="password">
@@ -29,11 +33,11 @@
                   <label class="form-control-label"  style="color:whitesmoke ;font-weight: 200;font-size: large;">Confirm Password</label>
                   <input type="password" name="password1" class="form-control" [(ngModel)]="password1">
                 </div>
-                  <!--<div class="form-check">
+                <!--<div class="form-check">
                   <label class="form-check-label">
                     <input type="checkbox" name="isSeller" class="form-check-input" [(ngModel)]="isSeller"> Register as Seller
                   </label>
-                </div> -->  
+                </div> --> 
                             <hr>
                 <button type="button" class="btn btn-primary btn-block" (click)="register()" [disabled]="btnDisabled">Next</button>
               </form>

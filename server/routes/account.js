@@ -99,7 +99,7 @@ router.route('/profile')
       user.save();
       res.json({
         success: true,
-        message: 'Successfully created your profile'
+        message: 'Successfully updated your profile'
       });
     });
   });
