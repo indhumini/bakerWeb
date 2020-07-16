@@ -1,12 +1,18 @@
+//main.JS file to facilitate REST services for Products,Categories, Review and payment functionality  
+
+//Including the required packages and assigning it to Local Variables
 const router = require('express').Router();
 const async = require('async');
+const stripe = require('stripe')('sk_test_wkcPYTXmqh2Y1Qayai7cW1Bk');
 
 const Category = require('../models/category');
 const Product = require('../models/product');
 const Review = require('../models/review');
+const Order = require('../models/order');
 
 const checkJWT = require('../middlewares/check-jwt');
 
+//Function to facilitate obtaining the product information 
 router.get('/products', (req, res, next) => {
   const perPage = 10;
   const page = req.query.page;
@@ -43,6 +49,7 @@ router.get('/products', (req, res, next) => {
   
 });
 
+//Function to facilitate categories GET and POST requests 
 router.route('/categories')
   .get((req, res, next) => {
     Category.find({}, (err, categories) => {
@@ -63,7 +70,7 @@ router.route('/categories')
     });
   });
 
-
+//Function to facilitate get request of specific categories
   router.get('/categories/:id', (req, res, next) => {
     const perPage = 10;
     const page = req.query.page;
@@ -107,6 +114,7 @@ router.route('/categories')
     
   });
 
+  //Function to facilitate get request of specific product
   router.get('/product/:id', (req, res, next) => {
     Product.findById({ _id: req.params.id })
       .populate('category')
@@ -129,6 +137,7 @@ router.route('/categories')
       });
   });
 
+//Function to facilitate review functionality 
   router.post('/review', checkJWT, (req, res, next) => {
     async.waterfall([
       function(callback) {
@@ -157,8 +166,47 @@ router.route('/categories')
     ]);
   });
 
+  //Function to facilitate payment functionality  using STRIPE API 
+router.post('/payment', checkJWT, (req, res, next) => {
+  const stripeToken = req.body.stripeToken;
+  const currentCharges = Math.round(req.body.totalPrice * 100);
+
+  stripe.customers
+    .create({
+      source: stripeToken.id
+    })
+    .then(function(customer) {
+      return stripe.charges.create({
+        amount: currentCharges,
+        currency: 'lkr',
+        customer: customer.id
+      });
+    })
+    .then(function(charge) {
+      const products = req.body.products;
+
+      let order = new Order();
+      order.owner = req.decoded.user._id;
+      order.totalPrice = currentCharges;
+      
+      products.map(product => {
+        order.products.push({
+          product: product.product,
+          quantity: product.quantity
+        });
+      });
+
+      order.save();
+      res.json({
+        success: true,
+        message: "Successfully made a payment"
+      });
+    });
+});
 
 
+
+//Exporting the module
 module.exports = router;
 
 

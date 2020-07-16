@@ -1,8 +1,14 @@
+//Category component.ts - Type Script file that contains code to render Category  to elearning application
+
+
+//including the required files and services
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { RestApiService } from '../rest-api.service';
 import { DataService } from '../data.service';
 
+
+//component specifc details 
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',

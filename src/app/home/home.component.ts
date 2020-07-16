@@ -1,3 +1,6 @@
+//Homecomponent.ts - Type Script file that contains code to render home page  to elearning application
+
+//including the required files and services
 import { Component, OnInit } from '@angular/core';
 import { RestApiService } from '../rest-api.service';
 import { DataService } from '../data.service';

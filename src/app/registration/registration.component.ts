@@ -1,14 +1,20 @@
+//Registration component.ts - Type Script file that contains code to render Registration/SignUp feature to elearning application
+
+//including the required files and services
 import { Component, OnInit } from '@angular/core';
 
 import { RestApiService } from '../rest-api.service';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
 
+//component specific details
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss']
 })
+
+//exporting Registration component for reuse 
 export class RegistrationComponent implements OnInit {
   name = '';
   email = '';
@@ -18,7 +24,9 @@ export class RegistrationComponent implements OnInit {
 
   btnDisbled = false;
 
-  constructor(private router: Router, private data: DataService, private rest: RestApiService) { }
+  constructor(private router: Router, 
+    private data: DataService, 
+    private rest: RestApiService) { }
 
   ngOnInit() {
   }

@@ -1,24 +1,31 @@
+//product component.ts - Type Script file that contains code to render products to elearning application
+
+//including the required files and services
 import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../data.service';
 import { RestApiService } from '../rest-api.service';
+
+//component specific details
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
+
+//exporting Product component for reuse 
 export class ProductComponent implements OnInit {
 
-  product: any;
-
-  myReview = {
+   myReview = {
     title: '',
     description: '',
     rating: 0
   };
 
   btnDisabled = false;
+  
+  product: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -38,6 +45,12 @@ export class ProductComponent implements OnInit {
     });
   }
 
+  addToCart() {
+    this.data.addToCart(this.product)
+      ? this.data.success('Product successfully added to cart.')
+      : this.data.error('Product has already been added to cart.');
+  }
+
   async postReview() {
     this.btnDisabled = true;
     try {
@@ -53,9 +66,10 @@ export class ProductComponent implements OnInit {
       data['success']
         ? this.data.success(data['message'])
         : this.data.error(data['message']);
+        this.btnDisabled = false;
     } catch(error) {
       this.data.error(error['message']);
     }
-    this.btnDisabled = false;
+    
   }
 }

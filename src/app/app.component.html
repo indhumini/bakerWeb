@@ -37,15 +37,15 @@
           &nbsp;
           &nbsp;
           &nbsp;
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a (click)="collapse()" routerLink="/create-comments"  class="nav-link" class="nav">COMMENTS</a>
           </li>
           &nbsp;
           &nbsp;
           &nbsp;
-          &nbsp;
+          &nbsp;-->
           <li class="nav-item">
-            <a (click)="collapse()" routerLink="/consultation"  class="nav-link" class="nav">CONSULTATION</a>
+            <a (click)="collapse()" routerLink="/consultation"  class="nav-link" class="nav">FAQS</a>
 
           </li>
           &nbsp;
@@ -80,8 +80,9 @@
           </li>
 
           <li class="nav-item ml-0 ml-md-2">
-            <a (click)="collapse()" routerLink="/user-cart" routerLinkActive="active" class="nav-link">
-              <i class="fa fa-shopping-cart mr-1" style="color: black;"></i>
+            <a (click)="collapse()" routerLink="/cart" routerLinkActive="active" class="nav-link">
+              <i class="fa fa-shopping-cart mr-1" style="color: black;">Cart</i>
+              <span *ngIf="data.cartItems" class="badge badge-warning ml-1">{{ data.cartItems }}</span>
 
             </a>
           </li>
@@ -94,90 +95,8 @@
 <router-outlet></router-outlet>
 
 
-<footer id="main-footer" class="bg-main text-white mt-5 p-5" style="background-image: url(assets/img/header4.jpg);" >
-  <!-- FOOTER -->
-<footer id="footer">
-  <!-- top footer -->
-  <div class="section">
-      <!-- container -->
-      <div class="container">
-          <!-- row -->
-          <div class="row" style="margin-left: 220px;">
-              <div class="col-md-3 col-xs-6">
-                  <div class="footer" style="margin-left: -216px;">
-                      <h3 class="footer-title" class="fontcolor">About Us</h3>
-                      <p  class="fontcolor">We provide our customers the best quality customized cakes with love.</p>
-                      <ul class="footer-links" style="font-weight: 700;color: black;">
-                          <li><a href="#" style="color: black;"><i class="fa fa-map-marker"></i>297/1,Temple Road,Dalugama,Kelaniya</a></li>
-                          <li><a href="#" style="color: black;"><i class="fa fa-phone"></i>+94-714862655</a></li>
-                          <li><a href="#" style="color: black;"><i class="fa fa-envelope-o"></i>indhumini97@gmail.com</a></li>
-                      </ul>
-                  </div>
-              </div>
-
-              
-
-              <div class="clearfix visible-xs"></div>
-
-              <div class="col-md-3 col-xs-6">
-                  <div class="footer">
-                      <h3 class="footer-title" class="fontcolor">Information</h3>
-                      <ul class="footer-links" style="color: black; font-weight: 700;">
-                          <li><a href="#" style="color: black;">About Us</a></li>
-                          <li><a href="#" style="color: black;">Contact Us</a></li>
-                          <li><a href="#" style="color: black;">Orders and Returns</a></li>
-                          <li><a href="#" style="color: black;">Terms & Conditions</a></li>
-                      </ul>
-                  </div>
-              </div>
-
-              <div class="col-md-3 col-xs-6">
-                  <div class="footer" style="margin-right: -300px;">
-                      <h3 class="footer-title"  class="fontcolor">Service</h3>
-                      <ul class="footer-links" style="font-weight: 700;color: black;">
-                          <li><a href="#" style="color: black;">My Profile</a></li>
-                          <li><a href="#" style="color: black;">View Cart</a></li>
-                          <li><a href="#" style="color: black;">Track My Order</a></li>
-                          <li><a href="#" style="color: black;">Help</a></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-          <!-- /row -->
-      </div>
-      <!-- /container -->
+<footer id="main-footer" class="bg-main text-white mt-5 p-5">
+  <div class="container">
+    <p class="lead text-center">-Sprinkles Bakery-</p>
   </div>
-  <!-- /top footer -->
-
-  <!-- bottom footer -->
-  
-  <!-- <div id="bottom-footer" class="section">
-      <div class="container">-->
-          <!-- row -->
-          <!--<div class="row">
-              <div class="col-md-12 text-center">
-                  <ul class="footer-payments">
-                      <li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
-                      <li><a href="#"><i class="fa fa-credit-card"></i></a></li>
-                      <li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
-                      <li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
-                      <li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
-                      <li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
-                  </ul>
-                  <span class="copyright">-->
-                      <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                 <!-- </span>
-              </div>
-          </div>-->
-              <!-- /row -->
-     <!-- </div>-->
-      <!-- /container -->
-  <!--</div>-->
-  <!-- /bottom footer -->
-</footer>
-<!-- /FOOTER -->
-
- <!-- <div class="container">
-    <p class="lead text-center">Copyright &copy; 2018 Amazono</p>
-  </div>-->
 </footer>

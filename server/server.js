@@ -1,3 +1,7 @@
+//This file acts as the entry point of elearning server application
+
+
+//Requiring all the packages necessary and making server.JS as entry point of application
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
@@ -57,7 +61,7 @@ mongoose.connect('mongodb://localhost/cakeStore', {useNewUrlParser: true}, err =
   }
 });
 
-
+//express application using required packages 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan('dev'));
@@ -123,11 +127,15 @@ app.use(cors());
 const userRoutes = require('./routes/account');
 const mainRoutes = require('./routes/main');
 const sellerRoutes = require('./routes/seller');
+const productSearchRoutes = require('./routes/product-search');
 
+//express application using Routes from this application
 app.use('/api', mainRoutes);
 app.use('/api/accounts', userRoutes);
 app.use('/api/seller', sellerRoutes);
+app.use('/api/search', productSearchRoutes);
 
+//Setting up the port for server to run on 
 app.listen(3030, err => {
   console.log('Magic happens on port awesome 3030');
 });

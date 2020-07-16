@@ -14,13 +14,26 @@ import { CategoryComponent } from './category/category.component';
 import { ProductComponent } from './product/product.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import{CommentsComponent} from './comments/comments.component';
-import { MainCartComponent } from './main-cart/main-cart.component';
+//import { CartComponent } from './main-cart/main-cart.component';
 import { ConsultationComponent } from './consultation/consultation.component';
+import{CartComponent} from './cart/cart.component';
+import{SearchComponent} from './search/search.component'
+import{OrderdetailsComponent} from './orderdetails/orderdetails.component'
+import{MyordersComponent} from './myorders/myorders.component'
 
 const routes: Routes = [
   {
-    path: '', component: HomeComponent
+    path: '', 
+    component: HomeComponent
   },
+  {
+    path: 'search',
+    component: SearchComponent,
+  },
+  {
+    path: 'cart',
+    component: CartComponent,
+  },  
   {
     path: 'categories',
     component: CategoriesComponent
@@ -34,18 +47,10 @@ const routes: Routes = [
     component: ProductComponent
   },
   {
-    path: 'about-us',
-    component: AboutUsComponent
+    path: 'orders/:id',
+    component: OrderdetailsComponent,
   },
   {
-    path:'user-cart',
-    component:MainCartComponent
-  },
-  {
-    path:'consultation',
-    component:ConsultationComponent
-  },
-   {
     path: 'register',
     component: RegistrationComponent,
     canActivate : [AuthGuardService]
@@ -54,11 +59,6 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
     canActivate: [AuthGuardService]
-  },
-  {
-    path: 'create-comments',
-    component: CommentsComponent,
-  
   },
   {
     path: 'profile',
@@ -86,13 +86,32 @@ const routes: Routes = [
     canActivate: [AuthGuardService]
   },
   {
+    path: 'profile/orders',
+    component: MyordersComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'about-us',
+    component: AboutUsComponent
+  },
+  {
+    path:'consultation',
+    component:ConsultationComponent
+  },
+  {
+    path: 'create-comments',
+    component: CommentsComponent,
+  },
+  {
     path: '**',
     redirectTo: ''
   }
 ];
 
+//decorator to import and export routing Module in the application 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

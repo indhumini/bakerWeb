@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const deepPopulate = require('mongoose-deep-populate')(mongoose);
+const mongooseAlgolia = require('mongoose-algolia');
 
 const ProductSchema = new Schema({
   
@@ -35,6 +36,32 @@ ProductSchema
   });
 
 ProductSchema.plugin(deepPopulate);
-module.exports = mongoose.model('Product', ProductSchema);
 
+ProductSchema.plugin(mongooseAlgolia, {
+  appId: '0FOEJ0HBMM',
+  apiKey: '3de82e9037ed2726d3a11d8b48a27b49',
+  indexName: 'Ecommercever1',
+  selector: '_id title image reviews description price owner created averageRating',
+  populate: {
+    path: 'owner reviews',
+    select: 'name rating'
+  },
+  defaults: {
+    author: 'uknown'
+  },
+  mappings: {
+    title: function(value) {
+      return `${value}`
+    }
+  },
+  debug: true
+})
+//Wrapping product schema to Model and synchronizing Algolia API 
+let Model = mongoose.model('Product', ProductSchema);
+Model.SyncToAlgolia();
+Model.SetAlgoliaSettings({
+  searchableAttributes: ['title']
+});
 
+//Exporting the wrapped Model(Algolia API + ProductSchema)
+module.exports = Model

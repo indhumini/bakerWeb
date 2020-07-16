@@ -1,5 +1,5 @@
-<body class="bkimage">
-<section id="profile">
+<!--<body class="bkimage">-->
+<section id="profile" class="bkimage">
     <div class="container p-5">
       <h4 class="display-4">My Profile</h4>
       <hr>
@@ -25,14 +25,14 @@
           <br>
           <br>
           <div *ngIf="data.user.isSeller">
-            <p class="lead">Admin Actions</p>
+            <p class="lead" style="font-weight: bolder;">Admin Actions</p>
             <hr>
             <div class="row">
               <div class="col-md-6 mb-3">
-                <a routerLink="/profile/postproduct" class="btn btn-outline-success btn-block">Post Customize Product</a>
+                <a routerLink="/profile/postproduct" class="btn btn-outline-success btn-block" style="font-weight: bold;">Post Product</a>
               </div>
               <div class="col-md-6">
-               <!--<a routerLink="/profile/myproducts" class="btn btn-outline-info btn-block">My Products</a>--> 
+               <a routerLink="/profile/myproducts" class="btn btn-outline-info btn-block"style="font-weight: bold;">My Products</a>
               </div>
             </div>
           </div>
@@ -40,5 +40,5 @@
       </div>
     </div>
   </section>
-</body>
+<!--</body>-->
   

@@ -1,18 +1,25 @@
+//setting component.ts - Type Script file that contains code to provide seettings  to elearning application
+
+//including the required files and services
 import { Component, OnInit } from '@angular/core';
 
 import { DataService } from '../data.service';
 import { RestApiService } from '../rest-api.service';
 
+//componnet specific details
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss']
 })
+
+//exporting settings component
 export class SettingsComponent implements OnInit {
   btnDisabled = false;
   currentSettings: any;
 
-  constructor(private data: DataService, private rest: RestApiService) { }
+  constructor(private data: DataService, 
+    private rest: RestApiService) { }
 
   async ngOnInit() { 
     try {

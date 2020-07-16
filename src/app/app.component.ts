@@ -1,3 +1,7 @@
+//app.component.ts- TypeScript file which facilitates authorization and provides logout and search functionality to e learning client application ///
+
+
+//including required services and modules 
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from './data.service';
@@ -14,6 +18,7 @@ export class AppComponent {
   isCollapsed = true;
 
   constructor (private router: Router, private data: DataService) {
+    this.data.cartItems = this.data.getCart().length;
     this.data.getProfile();
   }
 
@@ -31,9 +36,16 @@ export class AppComponent {
 
   logout() {
     this.data.user = {};
+    this.data.cartItems=0;
     localStorage.clear();
     this.router.navigate(['']);
   }
 
-  search() {}
+  search() {
+    if (this.searchTerm) {
+      this.collapse();
+      this.router.navigate(['search', { query: this.searchTerm }]);
+    
+  }
+}
 }

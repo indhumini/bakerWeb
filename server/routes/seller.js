@@ -1,7 +1,12 @@
+// Seller.JS file to maintain every sellers details and storing the resources on AWS 
+
+//Including the required packages and assigning it to Local Variables
 const router = require('express').Router();
 const Product = require('../models/product');
-
+//const aws = require('aws-sdk');
 const multer = require('multer');
+//const multerS3 = require('multer-s3');
+//const s3 = new aws.S3({ accessKeyId: "enter accessKeyId", secretAccessKey: "enter secretAccessKey" });
 
 //const faker = require('faker');
 
@@ -11,10 +16,25 @@ const multer = require('multer');
   'image/jpg' : 'jpg'
 };*/
 
+
 const checkJWT = require('../middlewares/check-jwt');
 
 const upload = multer({dest: "/uploads"})
+//function to upload resources to AWS using multer service 
+/*var upload = multer({
+  storage: multerS3({
+    s3: s3,
+    bucket: 'ecommercewebapplication',
+    metadata: function (req, file, cb) {
+      cb(null, {fieldName: file.fieldname});
+    },
+    key: function (req, file, cb) {
+      cb(null, Date.now().toString())
+    }
+  })
+});*/
 
+//Function to handle the product's GET and POST requests by seller 
  router.route('/products')
   .get(checkJWT, (req, res, next) => {
     Product.find({ owner: req.decoded.user._id })
@@ -84,6 +104,6 @@ const upload = multer({dest: "/uploads"})
 
 // });
 
-
+//Exporting the module 
 module.exports = router;
  

@@ -38,16 +38,13 @@ import { CommentCreateComponent } from './comments/comment-create/comment-create
 import { CommentListComponent } from './comments/comment-list/comment-list.component';
 import { AuthGuardService } from './auth-guard.service';
 import { RestApiService } from './rest-api.service';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
-import { CartComponent } from './shopping-cart/cart/cart.component';
-import { FiltersComponent } from './shopping-cart/filters/filters.component';
-import { ProductListComponent } from './shopping-cart/product-list/product-list.component';
-import { CartItemComponent } from './shopping-cart/cart/cart-item/cart-item.component';
-import { ProductItemComponent } from './shopping-cart/product-list/product-item/product-item.component';
-import { MainCartComponent } from './main-cart/main-cart.component';
 import { ConsultationComponent } from './consultation/consultation.component';
 import { NgImageSliderModule } from 'ng-image-slider';
-import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+//import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { MyordersComponent } from './myorders/myorders.component';
+import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
+import { SearchComponent } from './search/search.component';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -69,15 +66,12 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
     CommentsComponent,
     CommentCreateComponent,
     CommentListComponent,
-    ShoppingCartComponent,
-    CartComponent,
-    FiltersComponent,
-    ProductListComponent,
-    CartItemComponent,
-    ProductItemComponent,
-    MainCartComponent,
     ConsultationComponent,
-    AdminProfileComponent
+    //AdminProfileComponent,
+    MyordersComponent,
+    OrderdetailsComponent,
+    SearchComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

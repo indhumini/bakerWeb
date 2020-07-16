@@ -1,3 +1,7 @@
+//rest-api.service.ts - Type script file to provide REST(GET,POST) Services in the elearning application 
+
+
+//including required files and services 
 import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';

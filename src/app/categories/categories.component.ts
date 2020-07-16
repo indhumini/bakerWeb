@@ -1,3 +1,6 @@
+//Categories component.ts - Type Script file that contains code to render Categories feature to elearning application
+
+//including the required files and services 
 import { Component, OnInit } from '@angular/core';
 
 import { DataService } from '../data.service';

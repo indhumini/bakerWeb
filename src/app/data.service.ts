@@ -1,13 +1,22 @@
+//DataService.ts - Type Script file to facilitate DataService to know type of message,handle cart functionality 
+
+
+//including required modules and services 
 import { Injectable } from '@angular/core';
 
 import { NavigationStart, Router } from '@angular/router';
 import { RestApiService } from './rest-api.service';
+//import { getEnabledCategories } from 'trace_events';
 
+//Exporting the DataService
 @Injectable()
 export class DataService {
+  
   message = '';
   messageType = 'danger';
+
   user: any;
+  cartItems=0;
 
   constructor(private router: Router, private rest: RestApiService) {
     this.router.events.subscribe(event => {
@@ -46,4 +55,40 @@ export class DataService {
       this.error(err);
     }
   }
+
+
+
+
+getCart() {
+  const cart = localStorage.getItem('cart');
+  return cart ? JSON.parse(cart) : [];
+}
+
+addToCart(item: string) {
+  const cart: any = this.getCart();
+  if (cart.find(data => JSON.stringify(data) === JSON.stringify(item))) {
+    return false;
+  } else {
+    cart.push(item);
+    this.cartItems++;
+    localStorage.setItem('cart', JSON.stringify(cart));
+    return true;
+  }
+}
+
+removeFromCart(item: string) {
+  let cart: any = this.getCart();
+  if (cart.find(data => JSON.stringify(data) === JSON.stringify(item))) {
+    cart = cart.filter(data => JSON.stringify(data) !== JSON.stringify(item));
+    this.cartItems--;
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+}
+
+clearCart() {
+  this.cartItems = 0;
+  localStorage.setItem('cart', '[]');
+}
+
+
 }

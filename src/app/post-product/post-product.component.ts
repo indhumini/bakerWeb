@@ -1,14 +1,20 @@
+//post-products component.ts - Type Script file that contains code to render posted products to elearning application
+
+//including the required files and services
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { RestApiService } from '../rest-api.service';
 import { DataService } from '../data.service';
 
+//component specific details
 @Component({
   selector: 'app-post-product',
   templateUrl: './post-product.component.html',
   styleUrls: ['./post-product.component.scss']
 })
+
+//exporting PostProduct component for reuse 
 export class PostProductComponent implements OnInit {
 
   product = {

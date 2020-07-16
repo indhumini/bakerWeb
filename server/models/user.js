@@ -1,9 +1,14 @@
+//User.JSto create USerSchema in the application
+
+//Including the required packages and assigning it to Local Variables
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const bcrypt = require('bcrypt-nodejs');
 const crypto = require('crypto');
 
+
+//Creating UserSchema
 const UserSchema = new Schema({
   email: { type: String, unique: true, lowercase: true },
   name: String,
@@ -50,7 +55,7 @@ UserSchema.methods.gravatar = function(size) {
   }
 
 }
-
+//Exporting the Review schema to reuse
 module.exports = mongoose.model('User', UserSchema);
 
 

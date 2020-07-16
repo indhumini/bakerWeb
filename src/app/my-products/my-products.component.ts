@@ -1,8 +1,11 @@
+//my-products component.ts - Type Script file that contains code to render products to elearning application
+
+//including the required files and services
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { RestApiService } from '../rest-api.service';
 
-
+//component specific details 
 @Component({
   selector: 'app-my-products',
   templateUrl: './my-products.component.html',

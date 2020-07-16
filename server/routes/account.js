@@ -1,11 +1,16 @@
+// Account.JS file to maintain every users account details(SignUp,Login,Orders) and handle routes 
+
+//Including the required packages and assigning it to Local Variables
+
 const router = require('express').Router();
 const jwt = require('jsonwebtoken');
 
 const User = require('../models/user');
+const Order = require('../models/order');
 const config = require('../config');
 const checkJWT = require('../middlewares/check-jwt');
 
-
+//Function to facilitate Sign Up feature
 router.post('/signup', (req, res, next) => {
  let user = new User();
  user.name = req.body.name;
@@ -40,6 +45,7 @@ router.post('/signup', (req, res, next) => {
  });
 });
 
+//Function to facilitate login feature
 router.post('/login', (req, res, next) => {
 
   User.findOne({ email: req.body.email }, (err, user) => {
@@ -76,6 +82,7 @@ router.post('/login', (req, res, next) => {
   });
 });
 
+//Function to handle Profile API (GET,POST) functionality for authenticated users 
 router.route('/profile')
   .get(checkJWT, (req, res, next) => {
     User.findOne({ _id: req.decoded.user._id }, (err, user) => {
@@ -133,5 +140,48 @@ router.route('/profile')
     });
   });
 
+  //Function to handle Orders functionality for authenticated users  
+router.get('/orders', checkJWT, (req, res, next) => {
+  Order.find({ owner: req.decoded.user._id })
+    .populate('products.product')
+    .populate('owner')
+    .exec((err, orders) => {
+      if (err) {
+        res.json({
+          success: false,
+          message: "Couldn't find your order"
+        });
+      } else {
+        res.json({
+          success: true,
+          message: 'Found your order',
+          orders: orders
+        });
+      }
+    });
+});
 
+//Function to handle specific order functionality 
+router.get('/orders/:id', checkJWT, (req, res, next) => {
+  Order.findOne({ _id: req.params.id })
+    .deepPopulate('products.product.owner')
+    .populate('owner')
+    .exec((err, order) => {
+      if (err) {
+        res.json({
+          success: false,
+          message: "Couldn't find your order"
+        });
+      } else {
+        res.json({
+          success: true,
+          message: 'Found your order',
+          order: order
+        });
+      }
+    });
+});
+
+
+//Exporting the module 
 module.exports = router;
