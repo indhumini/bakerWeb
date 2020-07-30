@@ -45,7 +45,8 @@ import { MyordersComponent } from './myorders/myorders.component';
 import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 import { SearchComponent } from './search/search.component';
 import { CartComponent } from './cart/cart.component';
-import { SalesReportComponent } from './sales-report/sales-report.component';
+import { OrdersComponent } from './orders/orders.component';
+//import{SalesReportComponent} from './sales-report/sales-report.component';
 
 
 @NgModule({
@@ -73,7 +74,8 @@ import { SalesReportComponent } from './sales-report/sales-report.component';
     OrderdetailsComponent,
     SearchComponent,
     CartComponent,
-    SalesReportComponent
+    OrdersComponent,
+    //SalesReportComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+/*import { Component, OnInit } from '@angular/core';
+import {element} from 'protractor';
+import {Subscription} from 'rxjs';
+import * as html2pdf from 'html2pdf.js';
 
 @Component({
   selector: 'app-sales-report',
@@ -6,21 +9,48 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sales-report.component.scss']
 })
 export class SalesReportComponent implements OnInit {
-  public barChartOptions={
-    scaleShowVerticalLines :false,
-    responsive: true
-  }
-  public barChartLabels = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'];
-  public barChartType = 'bar';
-  public barChartLegend = true;
-  public barChartData = [
-    {data: [12,62,34,65,86,45,24,54,83], label:'Previous Year' , backgroundColor:'hsl(0, 0%, 40%)', hoverBackgroundColor:'hsl(0, 0%, 10%) '},
-    {data: [43,12,34,76,23,67,23,78,45], label:'This Year',backgroundColor:'HSL(171, 100%, 50%)',hoverBackgroundColor:'HSL(171, 100%, 30%) '}
-  ];
+  
+  searchTerm : string;
+  sales: Sales[] = [];
+  isLoading= false;
+  userIsAuthenticated = false;
+   salesSubs: Subscription;
+   authStatusSub: Subscription;
+   isHidden: boolean = true;
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.isLoading = true;
+    this.salesInteractionService.getSales();
+    this.salesSubs = this.salesInteractionService.getSalesUpdateListener()
+      .subscribe((posts: Sales[]) => {
+        this.isLoading = false;
+        this.sales = posts;
+      });
+
+    this.userIsAuthenticated = this.authService.getIsAuth();
+
+    this.authStatusSub = this.authService.getAuthStatusListener()
+    .subscribe(isAuthenticated =>{
+      this.userIsAuthenticated = isAuthenticated;
+    });
   }
 
-}
+  downloard(){
+    const options ={
+      name: 'output.pdf',
+      image: {type: 'jpeg'},
+      html2canvas:{},
+      jsPDF: {orientation: 'portrait'},
+      pagebreak: { mode: 'avoid-all', before: '#page2el' }
+    }
+    const element:Element = document.getElementById('table')
+
+    html2pdf()
+            .from(element)
+            .set(options)
+            .save()
+  }
+
+}*/

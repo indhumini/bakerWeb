@@ -20,7 +20,8 @@ import{CartComponent} from './cart/cart.component';
 import{SearchComponent} from './search/search.component'
 import{OrderdetailsComponent} from './orderdetails/orderdetails.component'
 import{MyordersComponent} from './myorders/myorders.component'
-import { SalesReportComponent } from './sales-report/sales-report.component';
+import { OrdersComponent } from './orders/orders.component';
+//import {SalesReportComponent } from './sales-report/sales-report.component';
 
 const routes: Routes = [
   {
@@ -101,7 +102,7 @@ const routes: Routes = [
   },
   {
     path: 'create-salesreport',
-    component: SalesReportComponent,
+    component: OrdersComponent,
   },
   {
     path: '**',
