@@ -21,6 +21,7 @@ import{SearchComponent} from './search/search.component'
 import{OrderdetailsComponent} from './orderdetails/orderdetails.component'
 import{MyordersComponent} from './myorders/myorders.component'
 import { OrdersComponent } from './orders/orders.component';
+import { ReviewReportComponent } from './review-report/review-report.component';
 //import {SalesReportComponent } from './sales-report/sales-report.component';
 
 const routes: Routes = [
@@ -103,6 +104,10 @@ const routes: Routes = [
   {
     path: 'create-salesreport',
     component: OrdersComponent,
+  },
+  {
+    path: 'create-reviewreport',
+    component: ReviewReportComponent,
   },
   {
     path: '**',

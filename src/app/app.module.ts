@@ -46,6 +46,7 @@ import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
 import { SearchComponent } from './search/search.component';
 import { CartComponent } from './cart/cart.component';
 import { OrdersComponent } from './orders/orders.component';
+import { ReviewReportComponent } from './review-report/review-report.component';
 //import{SalesReportComponent} from './sales-report/sales-report.component';
 
 
@@ -75,6 +76,7 @@ import { OrdersComponent } from './orders/orders.component';
     SearchComponent,
     CartComponent,
     OrdersComponent,
+    ReviewReportComponent,
     //SalesReportComponent
   ],
   imports: [
