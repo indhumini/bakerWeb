@@ -10,12 +10,12 @@
       </div>
       <div *ngIf="data.user" class="row mt-5">
         <div class="col-md-3">
-          <img  src="/assets/img/girl1.png" alt="userimage" class="rounded-circle image">
+          <img  src="/assets/img/prof.png" alt="userimage" class="rounded-circle image">
         </div>
         <!-- [src]="data.user.picture"-->
         <div class="col-md-8 ml-3">
           <p id="name"  style="font-weight: 600;" class="lead">{{ data.user.name }}</p>
-         <a routerLink="/profile/orders" class="btn btn-secondary">Shop</a>
+         <a routerLink="/profile/orders" class="btn btn-secondary">Orders</a>
           <br>
           <br>
           <a routerLink="/profile/settings" class="btn btn-secondary">Change Account Settings</a>
@@ -35,10 +35,13 @@
                <a routerLink="/profile/myproducts" class="btn btn-outline-info btn-block"style="font-weight: bold;">My Products</a>
               </div>
               <div class="col-md-6 mb-3">
-                <a routerLink="/create-salesreport" class="btn btn-outline-success btn-block" style="font-weight: bold;">Order Report</a>
+                <a routerLink="/create-ordersreport" class="btn btn-outline-success btn-block" style="font-weight: bold;">Order Report</a>
               </div>
               <div class="col-md-6 mb-3">
                 <a routerLink="/create-reviewreport" class="btn btn-outline-success btn-block" style="font-weight: bold;">Reviews Report</a>
+              </div>
+              <div class="col-md-6 mb-3">
+                <a routerLink="/create-usersreport" class="btn btn-outline-success btn-block" style="font-weight: bold;">Users Report</a>
               </div>
             </div>
           </div>

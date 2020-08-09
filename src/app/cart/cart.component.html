@@ -36,13 +36,21 @@
                   <small class="text-muted">{{ item.category.name }}</small>
                 </p>
                 <a class="text-danger" (click)="removeProduct(i, item)">Delete</a>
+                <br><br>
+                Your Order will not be sent for fulfillment before this date.<br>
+                If the Process Order Date is today then it will be sent immediately after approval. <br>
+                <strong> order date should be one week in advance.</strong>
               </div>
               <div class="col-1 col-md-2">
                 <h6 class="font-weight-bold text-danger">{{ item.price | currency :"Rs.":Rs}}</h6>
               </div>
               <div class="col-1 mt-5 mt-md-0 p-0">
                 <input type="number" class="form-control" min="1" max="99" [(ngModel)]="quantities[i]">
+                <br><br><br><br>
+                
+                <input type="date" class="form-control" min="2020-08-13" style="width: 175px;" value="2020-08-13">
               </div>
+             
             </div>
             <hr>
           </div>

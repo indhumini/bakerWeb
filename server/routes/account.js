@@ -183,5 +183,28 @@ router.get('/orders/:id', checkJWT, (req, res, next) => {
 });
 
 
+router.route('/users')
+  .get((req, res, next) => {
+    User.find({}, (err, users) => {
+      res.json({
+        success: true,
+        message: "Success",
+        users: users
+      })
+    })
+  });
+
+
+  router.route('/all-orders')
+  .get((req, res, next) => {
+    Order.find({}, (err, allOrders) => {
+      res.json({
+        success: true,
+        message: "Success",
+        allOrders: allOrders
+      })
+    })
+  });
+
 //Exporting the module 
 module.exports = router;

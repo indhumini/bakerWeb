@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
     config.keyboard=false;
     config.pauseOnHover=false;
   }
+  
 
 
   async ngOnInit() {

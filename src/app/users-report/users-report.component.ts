@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import * as html2pdf from 'html2pdf.js';
 import { RestApiService } from '../rest-api.service';
 import { DataService } from '../data.service';
 import{NgbCarouselConfig} from'@ng-bootstrap/ng-bootstrap';
+import * as html2pdf from 'html2pdf.js';
+import { interval } from 'rxjs';
 
 @Component({
-  selector: 'app-orders',
-  templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.scss']
+  selector: 'app-users-report',
+  templateUrl: './users-report.component.html',
+  styleUrls: ['./users-report.component.scss']
 })
-export class OrdersComponent implements OnInit {
-
-  
-  allOrders: any;
+export class UsersReportComponent implements OnInit {
+  users: any;
 
   constructor(
     private rest: RestApiService,
@@ -28,15 +27,16 @@ export class OrdersComponent implements OnInit {
   async ngOnInit() {
     try {
       const data = await this.rest.get(
-        'http://localhost:3030/api/accounts/all-orders'
+        'http://localhost:3030/api/accounts/users'
       );
       data['success']
-        ? (this.allOrders = data['allOrders'])
+        ? (this.users = data['users'])
         : this.data.error('Could not fetch users.');
     } catch(error) {
       this.data.error(error['message']);
     }
   }
+
 
   download(){
     const options={
@@ -52,5 +52,4 @@ export class OrdersComponent implements OnInit {
     .set(options)
     .save()
   }
-
 }

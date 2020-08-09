@@ -1,48 +1,105 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head class="panel-heading" style="background-color:hsl(0, 0%, 88%) ;color:hsl(0, 0%, 21%)">
-        <meta charset="UTF-8">
-        <title>
-            html to pdf
-        </title>
-         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    </head>
-    <body style="background-image: url(assets/img/report-wall.jpg);">
-        <h1>
-            Sales Report
-        </h1>
-        <table id="table" class="table table-striped">
-            <thead>
-            <tr>
-                <th>
-                    Order number
-                </th>
-                <th>
-                    Buyer
-                </th>
-                <th>
-                    Total Price
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>001</td>
-                <td>Hansini</td>
-                <td>Rs.10,000</td>
-            </tr>
-            <tr>
-                <td>002</td>
-                <td>Nalini</td>
-                <td>Rs.15,000</td>
-            </tr>
-            <tr>
-                <td>003</td>
-                <td>Lucas</td>
-                <td>Rs.9,000</td>
-            </tr>
-        </tbody>
-        </table>
-        <button (click)="download()">Download</button>
-    </body>
-</html>
+<section class="panel">
+    <p class="panel-heading" style="background-color:hsl(0, 0%, 88%) ;color:hsl(0, 0%, 21%)">
+      Users Report
+    </p>
+    <!--<div class="panel-block ">-->
+      <!--<div  style="height: 500px; width: 100%;">
+  
+        <div style="overflow-y:auto ;overflow-x: hidden;height: 500px;">-->
+  
+          <table id="table" class="table is-full menu-list" style="border:1px ;"  >
+            <tbody>
+              <div class="" >
+                <tr *ngFor="let order of allOrders ">
+                  <div class="div columns  is-full btn " style="width: 625px;" >
+                      <div class="div column" >
+                        <table class="table is-full" style="width: 600px; border: 1px;">
+                          <thead style="font-weight: bold;">
+                            <td>Order Id</td>
+                            <td>Total Price </td>
+                            <!--<td ></td>
+                            <td >Tax </td>
+                            <td >Paid Amount </td>
+                            <td >Balance </td>-->
+                          </thead>
+                          <tbody>
+                            <td>{{order.owner}}</td>
+                            <td>{{order.totalPrice}}</td>
+                            <!--<td >{{sale.totalPrice}} </td>
+                            <td >{{sale.tax}} </td>
+                            <td >{{sale.paidAmount }}</td>
+                            <td >{{sale.balance}} </td>-->
+                          </tbody>
+                        </table>
+                      </div>
+                      <!--<div class="panel-block">
+  
+                    </div>-->
+                  </div><br>
+                </tr>
+                <br><br>
+               
+              </div>
+        
+  
+  
+            </tbody>
+          </table>
+         <!-- </div>
+  
+      </div>
+    </div>-->
+  
+    <div class="panel-block">
+      <button class="button is-primary   is-full" (click)="download()" >Download Users Report</button>
+    </div>
+  
+  
+  </section>
+  
+  <!--<div style="margin-top: 500px;">
+    <table id="table" class="table is-full menu-list" style="margin-left: 20px;" >
+      <tbody>
+        <div class="" >
+          <tr >
+            <div class=" is-center">
+              <p class="title is-1 is-center" style="margin-left: 30%;">Users Report</p>
+            </div><br><br>
+            <div class="div columns  is-full btn " style="width: 745px;" >
+                <div class="div column" >
+                  <table class="table is-full" style="width: 720px;">
+                    <thead style="font-weight: bold;">
+                        <td>User Name</td>
+                        <td>User Email </td>-->
+                      <!--<td >Total Amount </td>
+                      <td >Tax </td>
+                      <td >Paid Amount </td>
+                      <td >Balance </td>-->
+                   <!-- </thead>
+                    <tbody *ngFor="let sale of sales ">
+                        <td>{{ user.name }}</td>
+                        <td>{{user.email}}</td>-->
+                     <!--<td >{{sale.totalPrice}} </td>
+                      <td >{{sale.tax}} </td>
+                      <td >{{sale.paidAmount }}</td>
+                      <td >{{sale.balance}} </td>--> 
+                   <!--</tbody>
+                  </table>
+                </div>
+                <div class="panel-block">
+  
+              </div>
+            </div><br>
+          </tr>
+          <br><br>
+          <tr>
+  
+          </tr>
+        </div>
+  <br>
+  
+  
+      </tbody>
+    </table>
+  </div>-->
+  

@@ -31,3 +31,16 @@
     font-weight: bold;
   }
  
+ 
+    /*@font-face {
+      font-family: "Bitstream Vera Serif Bold";
+      src: url("https://mdn.mozillademos.org/files/2468/VeraSeBd.ttf");
+    }
+    
+    div { font-family: "Bitstream Vera Serif Bold", serif }*/
+
+    .font {
+      font-family: 'Tangerine', serif;
+      font-size: 20px;
+      //text-shadow: 4px 4px 4px #aaa;
+    }

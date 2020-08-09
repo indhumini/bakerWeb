@@ -51,6 +51,7 @@ export class CartComponent implements OnInit {
   handler: any;
 
   quantities = [];
+  date=[];
 
   constructor(
     private data: DataService,
@@ -132,6 +133,22 @@ export class CartComponent implements OnInit {
       return true;
     }
   }
+  /*validate() {
+    if (!this.date.every(data => data > 0)) {
+      this.data.warning('Quantity cannot be less than one.');
+    } else if (!localStorage.getItem('token')) {
+      this.router.navigate(['/login']).then(() => {
+        this.data.warning('You need to login before making a purchase.');
+      });
+    } else if (!this.data.user['address']) {
+      this.router.navigate(['/profile/address']).then(() => {
+        this.data.warning('You need to login before making a purchase.');
+      });
+    } else {
+      this.data.message = '';
+      return true;
+    }
+  }*/
 
   checkout() {
     this.btnDisabled = true;

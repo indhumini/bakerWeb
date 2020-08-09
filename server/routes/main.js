@@ -166,6 +166,17 @@ router.route('/categories')
     ]);
   });
 
+  router.route('/reviews')
+  .get((req, res, next) => {
+    Review.find({}, (err, reviews) => {
+      res.json({
+        success: true,
+        message: "Success",
+        reviews: reviews
+      })
+    })
+  })
+
   //Function to facilitate payment functionality  using STRIPE API 
 router.post('/payment', checkJWT, (req, res, next) => {
   const stripeToken = req.body.stripeToken;

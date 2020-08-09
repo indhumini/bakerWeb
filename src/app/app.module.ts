@@ -47,8 +47,10 @@ import { SearchComponent } from './search/search.component';
 import { CartComponent } from './cart/cart.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ReviewReportComponent } from './review-report/review-report.component';
+import { UsersReportComponent } from './users-report/users-report.component';
 //import{SalesReportComponent} from './sales-report/sales-report.component';
-
+//import {GoogleChartsModule} from 'angular-google-charts';
+//import { GoogleChartComponent } from './google-chart/google-chart.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +79,9 @@ import { ReviewReportComponent } from './review-report/review-report.component';
     CartComponent,
     OrdersComponent,
     ReviewReportComponent,
+    UsersReportComponent,
+    //GoogleChartsModule,
+   
     //SalesReportComponent
   ],
   imports: [

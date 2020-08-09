@@ -22,7 +22,9 @@ import{OrderdetailsComponent} from './orderdetails/orderdetails.component'
 import{MyordersComponent} from './myorders/myorders.component'
 import { OrdersComponent } from './orders/orders.component';
 import { ReviewReportComponent } from './review-report/review-report.component';
+import { UsersReportComponent } from './users-report/users-report.component';
 //import {SalesReportComponent } from './sales-report/sales-report.component';
+
 
 const routes: Routes = [
   {
@@ -102,12 +104,16 @@ const routes: Routes = [
     component:ConsultationComponent
   },
   {
-    path: 'create-salesreport',
+    path: 'create-ordersreport',
     component: OrdersComponent,
   },
   {
     path: 'create-reviewreport',
     component: ReviewReportComponent,
+  },
+  {
+    path: 'create-usersreport',
+    component: UsersReportComponent,
   },
   {
     path: '**',

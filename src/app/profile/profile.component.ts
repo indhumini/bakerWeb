@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { DataService } from '../data.service';
 
+
 //component specific details
 @Component({
   selector: 'app-profile',

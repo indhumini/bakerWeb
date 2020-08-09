@@ -1,4 +1,11 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-main" style="background-image: url(assets/img/header4.jpg);">
+
+<html>
+  <head>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+  </head>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-main" style="background-image: url(assets/img/headerpic02.jpg);">
   <div class="container-fluid">
 <!--logo-->
     <a routerLink="/" class="navbar-brand">
@@ -20,41 +27,43 @@
 
       <div class="w-100">
         <!--navigation bar-->
-        <ul class="navbar-nav">
+        <ul class="navbar-nav" style="margin-left: 100px;">
 
-          <li class="nav-item">
-            <a (click)="collapse()" routerLink="/categories" routerLinkActive="active" class="nav-link" class="nav">CATEGORIES</a>
+          <li class="nav-item" style="margin-top: 21px;">
+            <a (click)="collapse()" routerLink="/categories" routerLinkActive="active" class="nav-link" class="nav" style="color: rgb(221, 216, 216 );" class="font">CATEGORIES</a>
           </li>
           &nbsp;
           &nbsp;
           &nbsp;
           &nbsp;
 
-          <li class="nav-item">
-            <a (click)="collapse()" routerLink="/about-us"  class="nav-link" class="nav">ABOUT US</a>
+          <li class="nav-item" style="margin-top: 21px;">
+            <a (click)="collapse()" routerLink="/about-us"  class="nav-link" class="nav" style="color: rgb(221, 216, 216);" class="font">ABOUT &nbsp; US</a>
           </li>
           &nbsp;
           &nbsp;
           &nbsp;
           &nbsp;
-          <!--<li class="nav-item">
-            <a (click)="collapse()" routerLink="/create-comments"  class="nav-link" class="nav">COMMENTS</a>
-          </li>
-          &nbsp;
-          &nbsp;
-          &nbsp;
-          &nbsp;-->
-          <li class="nav-item">
-            <a (click)="collapse()" routerLink="/consultation"  class="nav-link" class="nav">FAQS</a>
+         
+          <li class="nav-item" style="margin-top: 21px;">
+            <a (click)="collapse()" routerLink="/consultation"  class="nav-link" class="nav" style="color: rgb(221, 216, 216);" class="font"> FAQS</a>
 
+          </li>
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+
+          <li class="nav-item" style="margin-top: 21px;">
+            <a (click)="collapse()" routerLink="/create-comments"  class="nav-link" class="nav" style="color: rgb(221, 216, 216);" class="font">CUSTOMER FEEDBACK</a>
           </li>
           &nbsp;
           &nbsp;
           &nbsp;
           &nbsp;
           <!--Account/register/signin/login-->
-          <li class="nav-item ml-0 ml-md-auto" ngbDropdown #dropdown="ngbDropdown">
-            <a class="nav-link dropdown-toggle" ngbDropdownToggle style="color: black;font-size: large;font-weight: bold;" >
+          <li class="nav-item ml-0 ml-md-auto" ngbDropdown #dropdown="ngbDropdown" style="margin-right: 40px;">
+            <a class="nav-link dropdown-toggle" ngbDropdownToggle style="color: rgb(221, 216, 216);font-size: large;font-weight: bold;" style="font-family: Gabriola; margin-top: 30px; font-size: 20px;">
               <i class="fa fa-user mr-1"></i>
               <span *ngIf="!token" >Accounts</span>
               <span *ngIf="data.user">{{ data.user.name }}</span>
@@ -81,7 +90,7 @@
 
           <li class="nav-item ml-0 ml-md-2">
             <a (click)="collapse()" routerLink="/cart" routerLinkActive="active" class="nav-link">
-              <i class="fa fa-shopping-cart mr-1" style="color: black;">Cart</i>
+              <i class="fa fa-shopping-cart mr-1" style="color: rgb(221, 216, 216); " ><strong>Cart</strong></i>
               <span *ngIf="data.cartItems" class="badge badge-warning ml-1">{{ data.cartItems }}</span>
 
             </a>
@@ -95,8 +104,9 @@
 <router-outlet></router-outlet>
 
 
-<footer id="main-footer" class="bg-main text-white mt-5 p-5">
+<footer id="main-footer" class="bg-main text-white mt-5 p-5"   style="background-image: url(assets/img/headerpic02.jpg) ;">
   <div class="container">
     <p class="lead text-center">-Sprinkles Bakery-</p>
   </div>
 </footer>
+</html>
