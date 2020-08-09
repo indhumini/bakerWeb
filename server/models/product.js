@@ -7,6 +7,7 @@ const mongooseAlgolia = require('mongoose-algolia');
 const ProductSchema = new Schema({
   
   category: { type: Schema.Types.ObjectId, ref: 'Category'},
+  category_title:String,
   owner:  { type: Schema.Types.ObjectId, ref: 'User'},
   reviews: [{ type: Schema.Types.ObjectId, ref: 'Review'}],
   image: String,

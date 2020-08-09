@@ -70,7 +70,7 @@ const upload = multer({dest: "/uploads"})
 
   .post([checkJWT, upload.single('product_picture')], (req, res, next) => {
     console.log(upload);
-    console.log(req.file);
+    //console.log(req.file);
     let product = new Product();
     product.owner = req.decoded.user._id;
     product.category = req.body.categoryId;
