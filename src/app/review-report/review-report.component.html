@@ -1,19 +1,25 @@
+<html>
+  <body>
 <section class="panel">
-    <p class="panel-heading" style="background-color:hsl(0, 0%, 88%) ;color:hsl(0, 0%, 21%)">
+    <p class="panel-heading" style="background-color:hsl(0, 4%, 49%) ;color:hsl(0, 3%, 6%); text-align: center; font-size:xx-large;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
       Reviews Report
     </p>
-    <!--<div class="panel-block ">-->
-      <!--<div  style="height: 500px; width: 100%;">
+    <p class="panel-heading" style="background-color:hsl(0, 4%, 49%) ;color:hsl(0, 3%, 6%);font-weight: bold; text-align: center;; font-size:small;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+
+      Sprinkles Bakery
+  </p>
+    <div class="panel-block " style="background: url(/assets/img/report-wall.jpg);">
+      <div  style="height: 500px; width: 100%;">
   
-        <div style="overflow-y:auto ;overflow-x: hidden;height: 500px;">-->
+        <div style="overflow-y:auto ;overflow-x: hidden;height: 500px;">
   
           <table id="table" class="table is-full menu-list" style="border:1px ;"  >
             <tbody>
               <div class="" >
                 <tr *ngFor="let review of reviews ">
-                  <div class="div columns  is-full btn " style="width: 625px;" >
+                  <div class="div columns  is-full btn " style="width: 625px;" style="background-color: rgb(95, 92, 92);" >
                       <div class="div column" >
-                        <table class="table is-full" style="width: 600px; border: 1px;" >
+                        <table class="table is-full" style="width: 600px; border: 1px;" id="table" >
                           <thead style="font-weight: bold;">
                             <td>Review Id</td>
                             <td>Description </td>
@@ -32,9 +38,9 @@
                           </tbody>
                         </table>
                       </div>
-                      <!--<div class="panel-block">
+                      <div class="panel-block">
   
-                    </div>-->
+                    </div>
                   </div><br>
                 </tr>
                 <br><br>
@@ -45,13 +51,13 @@
   
             </tbody>
           </table>
-         <!-- </div>
+          </div>
   
       </div>
-    </div>-->
+    </div>
   
     <div class="panel-block">
-      <button class="button is-primary   is-full" (click)="download()" >Download Users Report</button>
+      <button class="button is-primary   is-full" (click)="download()" >Download Reviews Report</button>
     </div>
   
   
@@ -102,4 +108,5 @@
       </tbody>
     </table>
   </div>-->
-  
+</body>
+  </html>

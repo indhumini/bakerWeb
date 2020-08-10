@@ -43,7 +43,7 @@ export class OrdersComponent implements OnInit {
       name:'output.pdf',
       image:{type:'jpeg'},
       html2canvas:{},
-      jsPDF:{orientation:'landscape'}
+      jsPDF: {orientation: 'portrait'}
     }
     const element:Element=document.getElementById('table');
 
