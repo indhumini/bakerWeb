@@ -48,6 +48,7 @@ import { CartComponent } from './cart/cart.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ReviewReportComponent } from './review-report/review-report.component';
 import { UsersReportComponent } from './users-report/users-report.component';
+import { VisualsComponent } from './visuals/visuals.component';
 //import{SalesReportComponent} from './sales-report/sales-report.component';
 //import {GoogleChartsModule} from 'angular-google-charts';
 //import { GoogleChartComponent } from './google-chart/google-chart.component';
@@ -80,6 +81,7 @@ import { UsersReportComponent } from './users-report/users-report.component';
     OrdersComponent,
     ReviewReportComponent,
     UsersReportComponent,
+    VisualsComponent,
     //GoogleChartsModule,
    
     //SalesReportComponent
