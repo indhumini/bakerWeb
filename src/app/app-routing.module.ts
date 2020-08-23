@@ -25,6 +25,7 @@ import { ReviewReportComponent } from './review-report/review-report.component';
 import { UsersReportComponent } from './users-report/users-report.component';
 //import {SalesReportComponent } from './sales-report/sales-report.component';
 import {VisualsComponent} from './visuals/visuals.component';
+import { FeedComponent } from './feed/feed.component';
 
 
 const routes: Routes = [
@@ -115,6 +116,10 @@ const routes: Routes = [
   {
     path: 'view-visuals',
     component: VisualsComponent,
+  },
+  {
+    path: 'view-feeds',
+    component: FeedComponent,
   },
   {
     path: 'create-usersreport',

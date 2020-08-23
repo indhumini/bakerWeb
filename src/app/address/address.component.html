@@ -31,7 +31,7 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label style="color:whitesmoke ;font-weight: 400;">DOB</label>
-                  <input type="date" name="state" class="form-control" [(ngModel)]="currentAddress.dob">
+                  <input type="date" min='1960-01-01' max='2015-01-01' name="state" class="form-control" [(ngModel)]="currentAddress.dob">
                 </div>
               </div>
               <div class="col-md-4">

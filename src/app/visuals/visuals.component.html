@@ -18,11 +18,17 @@
             
        
             <!-- <li><a href="#" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li> -->
-           <td> <a href="https://www.instagram.com/sprinkles_bakery.97/"> <img src="assets/img/insta.jpg" style="height: 30px;width: 30px;"></a></td>
-           &nbsp;  &nbsp;  &nbsp;  &nbsp;
-            <td><a href="https://www.facebook.com/Sprinkles-Bakery-111194167031951"><img src="assets/img/fb.png" style="height: 30px;width: 30px;"></a></td>
+           <td> <a href="https://www.instagram.com/sprinkles_bakery.97/">
+             <img src="assets/img/insta.jpg" style="height: 70x;width: 70px;"></a></td>
+           &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp; 
+            <td><a href="https://www.facebook.com/Sprinkles-Bakery-111194167031951">
+                <img src="assets/img/fb.png" style="height: 70px;width: 70px;"></a></td>
             <!-- <li><a href="#" class="icon style2 fa-500px"><span class="label">500px</span></a></li>
             <li><a href="#" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li> -->
+            &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;
+              &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;
+        <td><button class="bubbly-button" routerLink="/view-feeds">Click here !!</button></td>
+
        
     </tr>
     </table>
@@ -32,9 +38,12 @@
                 <img src="assets/images/img-01.jpeg" />
             </a>
             </div>
-            <div class="img" style="background-color: aliceblue;">
+            <div class="img" style="background-image: url(/assets/images/milky-way.jpg);">
                 <br>
-				<p style="font-size: xx-large;font-weight: bold;">This is<br> what <br>you call<br> the <br>cake heaven!!!</p>
+                <p style="font-size: xx-large;font-weight: bold; color: rgb(237, 245, 245);">
+                    This is what <br>you call<br> the <br>cake 🎂 heaven!!!
+                <br>See all our <br> customer <br> reviews 😎!!!
+            </p>
 			</div>
 			<!-- <div class="img">
 				<img src="assets/images/img-18.jpeg" />
@@ -148,4 +157,25 @@
 <script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.poptrox.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/main.js"></script>
+            <script src="assets/js/main.js"></script>
+            
+
+            <script>
+                var animateButton = function(e) {
+
+e.preventDefault;
+//reset animation
+e.target.classList.remove('animate');
+
+e.target.classList.add('animate');
+setTimeout(function(){
+  e.target.classList.remove('animate');
+},700);
+};
+
+var bubblyButtons = document.getElementsByClassName("bubbly-button");
+
+for (var i = 0; i < bubblyButtons.length; i++) {
+bubblyButtons[i].addEventListener('click', animateButton, false);
+}
+            </script>
