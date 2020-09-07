@@ -1,5 +1,4 @@
-//Order Details component.ts - Type Script file that contains code to render details of the order to elearning application
-
+//Order Details component.ts - Type Script file that contains code to render details of the order.
 
 //including the required files and services
 import { Component, OnInit } from '@angular/core';

@@ -1,14 +1,20 @@
+//Orders component.ts - Type Script file that contains code to render an order report feature.
+
+
 import { Component, OnInit } from '@angular/core';
 import * as html2pdf from 'html2pdf.js';
 import { RestApiService } from '../rest-api.service';
 import { DataService } from '../data.service';
 import{NgbCarouselConfig} from'@ng-bootstrap/ng-bootstrap';
 
+//component specific details
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
   styleUrls: ['./orders.component.scss']
 })
+
+//exporting Product component for reuse
 export class OrdersComponent implements OnInit {
 
   

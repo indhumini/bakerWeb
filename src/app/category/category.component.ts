@@ -1,4 +1,4 @@
-//Category component.ts - Type Script file that contains code to render Category  to elearning application
+//Category component.ts - Type Script file that contains code to render Category.
 
 
 //including the required files and services

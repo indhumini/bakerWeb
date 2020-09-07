@@ -1,4 +1,4 @@
-//rest-api.service.ts - Type script file to provide REST(GET,POST) Services in the elearning application 
+//rest-api.service.ts - Type script file to provide REST(GET,POST) Services in the system. 
 
 
 //including required files and services 

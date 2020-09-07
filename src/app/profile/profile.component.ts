@@ -1,4 +1,4 @@
-//Profile  component.ts - Type Script file that contains code to render profile details to elearning application
+//Profile  component.ts - Type Script file that contains code to render profile details.
 
 //including the required files and services
 import { Component, OnInit } from '@angular/core';

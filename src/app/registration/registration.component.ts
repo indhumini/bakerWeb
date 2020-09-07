@@ -1,4 +1,5 @@
-//Registration component.ts - Type Script file that contains code to render Registration/SignUp feature to elearning application
+//Registration component.ts - Type Script file that contains code to render Registration/SignUp feature.
+
 
 //including the required files and services
 import { Component, OnInit } from '@angular/core';

@@ -1,4 +1,4 @@
-//This file acts as the entry point of elearning server application
+//This file acts as the entry point of sprinkles bakery server application
 
 
 //Requiring all the packages necessary and making server.JS as entry point of application

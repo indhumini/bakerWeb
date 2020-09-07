@@ -1,4 +1,4 @@
-//Homecomponent.ts - Type Script file that contains code to render home page  to elearning application
+//Homecomponent.ts - Type Script file that contains code to render home page.
 
 //including the required files and services
 import { Component, OnInit } from '@angular/core';

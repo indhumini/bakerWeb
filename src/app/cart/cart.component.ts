@@ -1,34 +1,6 @@
-/*import { Component, OnInit } from '@angular/core';
-
-import { environment } from '../../environments/environment';
-import { DataService } from '../data.service';
-import { RestApiService } from '../rest-api.service';
-import { Router } from '@angular/router';
-
-@Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
-})
-export class CartComponent implements OnInit {
-  btnDisabled=false;
-  handler:any;
-
-  quantities=[];
-
-  constructor(private data: DataService,
-    private rest: RestApiService,
-    private router: Router,) 
-    { }
-
-  ngOnInit(): void {
-  }
-
-}*/
 
 
-
-//Cart component.ts - Type Script file that contains code to render cart feature to elearning application
+//Cart component.ts - Type Script file that contains code to render cart feature.
 
 //including the required files and services 
 import { Component, OnInit } from '@angular/core';
@@ -133,22 +105,7 @@ export class CartComponent implements OnInit {
       return true;
     }
   }
-  /*validate() {
-    if (!this.date.every(data => data > 0)) {
-      this.data.warning('Quantity cannot be less than one.');
-    } else if (!localStorage.getItem('token')) {
-      this.router.navigate(['/login']).then(() => {
-        this.data.warning('You need to login before making a purchase.');
-      });
-    } else if (!this.data.user['address']) {
-      this.router.navigate(['/profile/address']).then(() => {
-        this.data.warning('You need to login before making a purchase.');
-      });
-    } else {
-      this.data.message = '';
-      return true;
-    }
-  }*/
+  
 
   checkout() {
     this.btnDisabled = true;

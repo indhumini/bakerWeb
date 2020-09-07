@@ -1,4 +1,4 @@
-//app.component.ts- TypeScript file which facilitates authorization and provides logout and search functionality to e learning client application ///
+//app.component.ts- TypeScript file which facilitates authorization and provides logout and search functionality 
 
 
 //including required services and modules 

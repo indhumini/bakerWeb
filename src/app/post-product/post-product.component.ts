@@ -1,4 +1,4 @@
-//post-products component.ts - Type Script file that contains code to render posted products to elearning application
+//Post-products component.ts - Type Script file that contains code to render posted products to the system.
 
 //including the required files and services
 import { Component, OnInit } from '@angular/core';

@@ -1,4 +1,4 @@
-//my-products component.ts - Type Script file that contains code to render products to elearning application
+//my-products component.ts - Type Script file that contains code to render products ordered by customer.
 
 //including the required files and services
 import { Component, OnInit } from '@angular/core';
@@ -11,6 +11,8 @@ import { RestApiService } from '../rest-api.service';
   templateUrl: './my-products.component.html',
   styleUrls: ['./my-products.component.scss']
 })
+
+//exporting settings component
 export class MyProductsComponent implements OnInit {
 
   products: any;

@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-//Creating a Order Schema 
+//Creating an Order Schema 
 const OrderSchema = new Schema({
   owner: { type: Schema.Types.ObjectId, ref: 'User'},
   totalPrice: { type: Number, default: 0},

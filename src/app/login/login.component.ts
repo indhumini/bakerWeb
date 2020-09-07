@@ -1,4 +1,4 @@
-//Logincomponent.ts - Type Script file that contains code to render Login feature to elearning application
+//Logincomponent.ts - Type Script file that contains code to render Login feature.
 
 //including the required files and services
 import { Component, OnInit } from '@angular/core';

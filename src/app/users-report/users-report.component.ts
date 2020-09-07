@@ -1,3 +1,6 @@
+//users-report component.ts - Type Script file that contains code to render users report feature.
+
+//including the required files and services
 import { Component, OnInit } from '@angular/core';
 import { RestApiService } from '../rest-api.service';
 import { DataService } from '../data.service';
@@ -5,11 +8,15 @@ import{NgbCarouselConfig} from'@ng-bootstrap/ng-bootstrap';
 import * as html2pdf from 'html2pdf.js';
 import { interval } from 'rxjs';
 
+
+//component specific details 
 @Component({
   selector: 'app-users-report',
   templateUrl: './users-report.component.html',
   styleUrls: ['./users-report.component.scss']
 })
+
+//exporting settings component
 export class UsersReportComponent implements OnInit {
   users: any;
 

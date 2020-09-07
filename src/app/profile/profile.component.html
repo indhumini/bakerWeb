@@ -1,4 +1,3 @@
-<!--<body class="bkimage">-->
 <section id="profile" class="bkimage">
     <div class="container p-5">
       <h4 class="display-4">My Profile</h4>
@@ -12,7 +11,7 @@
         <div class="col-md-3">
           <img  src="/assets/img/prof.png" alt="userimage" class="rounded-circle image">
         </div>
-        <!-- [src]="data.user.picture"-->
+
         <div class="col-md-8 ml-3">
           <p id="name"  style="font-weight: 600;" class="lead">{{ data.user.name }}</p>
          <a routerLink="/profile/orders" class="btn btn-secondary">Orders</a>
@@ -21,7 +20,6 @@
           <a routerLink="/profile/settings" class="btn btn-secondary">Change Account Settings</a>
           <br>
           <br>
-         <!-- <a routerLink="/profile/address" class="btn btn-secondary">Change Delivery Address</a>-->
           <br>
           <br>
           <div *ngIf="data.user.isSeller">
@@ -49,5 +47,4 @@
       </div>
     </div>
   </section>
-<!--</body>-->
   

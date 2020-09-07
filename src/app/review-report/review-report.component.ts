@@ -1,14 +1,20 @@
+//Review-report component.ts - Type Script file that contains code to render a review report feature.
+
+//including the required files and services
 import { Component, OnInit } from '@angular/core';
 import * as html2pdf from 'html2pdf.js';
 import { RestApiService } from '../rest-api.service';
 import { DataService } from '../data.service';
 import{NgbCarouselConfig} from'@ng-bootstrap/ng-bootstrap';
 
+//component specific details
 @Component({
   selector: 'app-review-report',
   templateUrl: './review-report.component.html',
   styleUrls: ['./review-report.component.scss']
 })
+
+//exporting Product component for reuse
 export class ReviewReportComponent implements OnInit {
 
 

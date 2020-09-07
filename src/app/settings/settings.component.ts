@@ -1,4 +1,4 @@
-//setting component.ts - Type Script file that contains code to provide seettings  to elearning application
+//setting component.ts - Type Script file that contains code to provide  account settings.
 
 //including the required files and services
 import { Component, OnInit } from '@angular/core';
